@@ -1,0 +1,29 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "fullstack phonebook exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamprincetj/fullstack_backend.git"
+  },
+  "author": "Justin Tochukwu Nwanze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamprincetj/fullstack_backend/issues"
+  },
+  "homepage": "https://github.com/iamprincetj/fullstack_backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
