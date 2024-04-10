@@ -5,6 +5,9 @@ module.exports = {
         'es2021': true
     },
     'extends': 'eslint:recommended',
+    'globals': {
+        'process': true
+    },
     'overrides': [
         {
             'env': {
@@ -47,6 +50,5 @@ module.exports = {
             'error', { 'before': true, 'after': true }
         ],
         'no-console': 0,
-
     }
 }

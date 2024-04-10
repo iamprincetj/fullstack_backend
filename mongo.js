@@ -1,5 +1,6 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
-const process = require('process')
+
 
 if (process.argv.length < 3) {
     console.log('give password as an argument')
@@ -10,7 +11,7 @@ const password = process.argv[2]
 const name = process.argv[3]
 const number = process.argv[4]
 
-const url = `mongodb+srv://princetj:${password}@cluster0.mt7dkux.mongodb.net/phonebook?retryWrites=true&w=majority`
+const url = `mongodb+srv://princetj:${password}.fullstack@cluster0.mt7dkux.mongodb.net/phonebook?retryWrites=true&w=majority`
 //const url = process.env.MONGODB_URI
 
 mongoose.set('strictQuery', false)
@@ -34,9 +35,7 @@ if (process.argv.length > 3) {
 } else {
     Phonebook.find({}).then(result => {
         console.log('phonebook:')
-        result.forEach(val => {
-            console.log(val.name, val.number)
-        })
+        result.map(phonebook => console.log(phonebook.name, phonebook.number))
         mongoose.connection.close()
     })
 }

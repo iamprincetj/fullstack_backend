@@ -1,11 +1,17 @@
 require('dotenv').config()
-const process = require('process')
 const mongoose = require('mongoose')
+const environ = process.env.NODE_ENV
 
 mongoose.set('strictQuery', false)
-const url = process.env.MONGODB_URI
+let url
+//const url = 'mongodb://localhost/phonebook'
 
-console.log('connecting to', url)
+if (environ === 'production') {
+    url = process.env.MONGODB_URI
+}else {
+    url = 'mongodb://localhost/phonebook'
+}
+
 
 mongoose.connect(url)
     .then( () => {

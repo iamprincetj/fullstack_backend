@@ -1,10 +1,11 @@
 require('dotenv').config()
-const process = require('process')
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
 const Phonebook = require('./models/phonebook')
+
+console.log(process.env.NODE_ENV)
 
 app.use(cors())
 app.use(express.json())
